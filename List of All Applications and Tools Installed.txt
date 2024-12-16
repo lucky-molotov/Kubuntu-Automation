@@ -1,0 +1,176 @@
+List of All Applications and Tools Installed
+1. System Utilities and Management Tools
+Timeshift
+
+Purpose: A system snapshot and restoration utility.
+Reference: Timeshift GitHub
+UFW (Uncomplicated Firewall)
+
+Purpose: A simple interface for managing firewall rules.
+Reference: UFW Ubuntu Wiki
+cron
+
+Purpose: A time-based job scheduler in Unix-like operating systems.
+Reference: Cron Manual
+TLP (Linux Advanced Power Management)
+
+Purpose: Power management tool to optimize battery life on laptops.
+Reference: TLP GitHub
+Git
+
+Purpose: A distributed version control system.
+Reference: Git SCM
+Neofetch
+
+Purpose: A system information tool written in Bash.
+Reference: Neofetch GitHub
+Docker
+
+Purpose: A platform for developing, shipping, and running applications in containers.
+Reference: Docker
+fail2ban
+
+Purpose: Intrusion prevention software that protects servers from brute-force attacks.
+Reference: Fail2Ban Official Website
+ufw (Uncomplicated Firewall)
+
+Purpose: Frontend for managing firewall settings.
+Reference: UFW
+2. Software Packages and Development Tools
+python3
+
+Purpose: A widely used programming language for software development.
+Reference: Python Official Website
+python3-pip
+
+Purpose: A package manager for Python packages.
+Reference: Pip Documentation
+build-essential
+
+Purpose: A package containing development tools like GCC, make, and other libraries.
+Reference: Build Essential Package
+Kubuntu Restricted Extras
+
+Purpose: A package that installs essential multimedia codecs, fonts, and additional media tools.
+Reference: Kubuntu Restricted Extras
+virtualbox
+
+Purpose: A free and open-source virtualization software.
+Reference: VirtualBox
+steam
+
+Purpose: A digital distribution platform for video games.
+Reference: Steam
+vlc
+
+Purpose: A free and open-source media player.
+Reference: VLC Media Player
+playonlinux
+
+Purpose: A graphical frontend for Wine, which allows running Windows applications on Linux.
+Reference: PlayOnLinux
+nextcloud-desktop
+
+Purpose: A client for syncing files with a Nextcloud server.
+Reference: Nextcloud Desktop
+wine
+
+Purpose: A compatibility layer for running Windows applications on Unix-like operating systems.
+Reference: WineHQ
+sublime-text
+
+Purpose: A cross-platform text editor for code and markup.
+Reference: Sublime Text
+gitkraken
+
+Purpose: A Git GUI client for version control.
+Reference: GitKraken
+Code (Visual Studio Code)
+
+Purpose: A source-code editor developed by Microsoft.
+Reference: Visual Studio Code
+gimp
+
+Purpose: A free and open-source raster graphics editor.
+Reference: GIMP
+krita
+
+Purpose: A free and open-source raster graphics editor, focused on digital painting.
+Reference: Krita
+kdenlive
+
+Purpose: A free and open-source video editing software.
+Reference: Kdenlive
+docker
+
+Purpose: A platform for developing, shipping, and running applications in containers.
+Reference: Docker
+flatpak
+
+Purpose: A framework for building and distributing sandboxed desktop applications on Linux.
+Reference: Flatpak
+apt-fast
+
+Purpose: A faster version of apt using parallel downloading.
+Reference: apt-fast GitHub
+3. Networking & Security Tools
+Proton VPN
+
+Purpose: A privacy-focused VPN service that supports secure browsing.
+Reference: ProtonVPN
+bluez
+
+Purpose: The official Linux Bluetooth protocol stack.
+Reference: BlueZ
+bluetooth-tools
+
+Purpose: Command-line tools for Bluetooth management.
+Reference: Bluetooth Tools
+clamav
+
+Purpose: An open-source antivirus engine for detecting malware.
+Reference: ClamAV
+mesa-utils
+
+Purpose: Utilities for testing and troubleshooting OpenGL drivers.
+Reference: Mesa
+4. Snap & Flatpak
+snapd
+
+Purpose: A package management system that allows installing snaps on Linux.
+Reference: Snapcraft
+flatpak
+
+Purpose: A system for distributing and running sandboxed desktop applications.
+Reference: Flatpak
+Ultimate Hosts List (Used for /etc/hosts file update)
+The Ultimate Hosts List is a large collection of domains used to block ads, malware, and other unwanted content. The script uses an online version of the Ultimate Hosts List for its /etc/hosts file to enhance privacy by blocking known ad and malware domains.
+
+Reference for Ultimate Hosts List
+URL: Ultimate Hosts List
+Purpose: Provides a continuously updated list of domains to block various forms of malware, ads, and tracking websites by modifying the /etc/hosts file.
+The script downloads the latest version of the Ultimate Hosts List from the URL https://hosts.ubuntu101.co.za/hosts and applies it to your /etc/hosts file to block a variety of unwanted content. This list is regularly updated to maintain its effectiveness.
+
+Additional Host File (Superhosts.deny)
+URL for Superhosts: https://hosts.ubuntu101.co.za/superhosts.deny
+Purpose: A complementary file used to deny access to a specific set of domains.
+Summary of Software Tools and References
+Below is a final list summarizing the software installed by the script:
+
+Timeshift - Timeshift GitHub
+UFW - UFW Ubuntu Wiki
+cron - Cron Manual
+TLP - TLP GitHub
+Git - Git SCM
+Neofetch - Neofetch GitHub
+Docker - Docker
+fail2ban - Fail2Ban Official Website
+python3 - Python Official Website
+Kubuntu Restricted Extras - Kubuntu Restricted Extras
+Steam - Steam
+VLC - VLC Media Player
+Wine - WineHQ
+Snap - Snapcraft
+Flatpak - Flatpak
+Proton VPN - ProtonVPN
+Ultimate Hosts List - Ultimate Hosts List GitHub
