@@ -1,7 +1,7 @@
 #!/bin/bash
-
 # Define snapshot name
 SNAPSHOT_NAME="pre-setup-$(date +'%Y-%m-%d_%H-%M-%S')"
+export SNAPSHOT_NAME
 LOG_FILE="/var/log/setup-script.log"
 ERROR_LOG_FILE="/var/log/setup-script-error.log"
 
@@ -25,10 +25,9 @@ check_command() {
         
         # Log to error file if in non-interactive mode
         log_error "$step_name failed with exit code $exit_code."
-
         # Ask the user what they want to do
         while true; do
-            read -p "Do you want to (c)ontinue, (s)kip, or (e)xit the script? (c/s/e): " choice
+            read -r -p "Do you want to (c)ontinue, (s)kip, or (e)xit the script? (c/s/e): " choice
             case "$choice" in
                 c|C) 
                     log_message "User chose to continue. Moving to the next step."
@@ -60,10 +59,10 @@ is_package_installed() {
 # Function to check network availability
 check_network() {
     ping -c 1 google.com &>/dev/null
-    if [ $? -ne 0 ]; then
-        log_error "Network is not available. Exiting script."
-        exit 1
-    fi
+    if ! sudo apt-get update && sudo apt-get upgrade -y; then
+    log_message "System update and upgrade failed."
+    exit 1
+fi
 }
 
 # Check network before proceeding
@@ -78,7 +77,10 @@ check_command "Timeshift snapshot creation"
 
 # Update and upgrade the system
 log_message "Updating and upgrading the system..."
-sudo apt-get update && sudo apt-get upgrade -y
+if ! sudo apt-get update && sudo apt-get upgrade -y; then
+    log_message "System update and upgrade failed."
+    exit 1
+fi
 check_command "System update and upgrade"
 
 # Add multiverse repository for additional software (e.g., multimedia codecs)
@@ -196,16 +198,16 @@ check_command "Starting cron service"
 
 # Set up hosts file update every day at 2 AM and on startup
 log_message "Setting up automated hosts file update every day at 2 AM and on startup..."
-
 # Backup current hosts file with timestamp
-sudo mv /etc/hosts /etc/hosts.bak.$(date +'%Y-%m-%d_%H-%M-%S')
+sudo mv "/etc/hosts" "/etc/hosts.bak.$(date +'%Y-%m-%d_%H-%M-%S')"
+
 # Check if the URL is available before downloading
 URL="https://hosts.ubuntu101.co.za/hosts"
-if ! wget --tries=3 --timeout=10 --spider $URL; then
+if ! wget --tries=3 --timeout=10 --spider "$URL"; then
     log_message "Error: Unable to reach $URL. Hosts file update skipped."
 else
-    sudo wget $URL -O /etc/hosts
-    if [ $? -ne 0 ]; then
+    sudo wget "$URL" -O /etc/hosts
+    if ! sudo wget "$URL" -O /etc/hosts; then
         log_error "Failed to download hosts file from $URL."
     fi
     sudo wget https://hosts.ubuntu101.co.za/superhosts.deny -O /etc/hosts.deny
