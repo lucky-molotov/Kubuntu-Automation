@@ -67,4 +67,4 @@ Contributing
 If you have suggestions for improvements or additional tools to include in the script, feel free to fork this repository and submit a pull request. Contributions are always welcome!
 
 Contact
-For questions or feedback, feel free to reach out to me via
+For questions or feedback, feel free to reach out to me
